@@ -18,5 +18,14 @@ Rota para Estados e cidades
 */
 routes.get('/estados', EstadoController.index);
 
+/*
+Rotas para para os setores do previpalmas
+*/
+routes.get   ('/setors', SetorController.index);
+routes.post  ('/setors', SetorController.store);
+routes.get   ('/setors/:id', SetorController.show);
+routes.put   ('/setors/:id', SetorController.update);
+routes.delete('/setors/:id', SetorController.destroy);
+
 
 module.exports = routes;
