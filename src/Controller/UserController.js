@@ -15,8 +15,6 @@ module.exports = {
      return res.json(user);
    },
 
-
-
    async store(req, res){
      //criação
      const user = await User.create(req.body);
