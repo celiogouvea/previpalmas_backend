@@ -33,8 +33,4 @@ module.exports = {
      return res.send();
    },
 
-
-
-
-
 };

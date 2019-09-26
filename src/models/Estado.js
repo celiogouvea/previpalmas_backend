@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 
-const EstadosSchema = new mongoose.Schema({
-
-  estado:{
-
+const EstadoSchema = new mongoose.Schema({
     state:{type:String},
     stateName:{type:String},
-    cities:[]
-  },
+    cities:{type:Array}
 });
 
 
-mongoose.model('Estado',UsersSchema);
+mongoose.model('Estado',EstadoSchema);
