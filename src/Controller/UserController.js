@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 
 const User = mongoose.model('User');
+const Setor = mongoose.model('Setor');
 
 
 module.exports = {
