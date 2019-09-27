@@ -9,6 +9,7 @@ const ProcessosSchema = new mongoose.Schema({
   numeroProtocolo: {
     type: String,
     require: true,
+    unique: true,
   },
   nomeBeneficiario: {
     type: String,
