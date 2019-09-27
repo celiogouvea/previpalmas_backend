@@ -34,7 +34,7 @@ routes.delete('/setors/:id', SetorController.destroy);
 Rotas para para os setores do previpalmas
 */
 routes.get   ('/processos', ProcessoController.index);
-routes.post  ('/processos', SProcessoController.store);
+routes.post  ('/processos', ProcessoController.store);
 routes.get   ('/processos/:id', ProcessoController.show);
 routes.put   ('/processos/:id', ProcessoController.update);
 routes.delete('/processos/:id', ProcessoController.destroy);

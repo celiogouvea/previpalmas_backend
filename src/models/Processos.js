@@ -20,15 +20,11 @@ const ProcessosSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    unique: true,
     required: true,
-    lowercase: true,
   },
   cpf: {
     type: String,
-    unique: true,
     required: true,
-    lowercase: true,
   },
   despacho:{
     type:String,
