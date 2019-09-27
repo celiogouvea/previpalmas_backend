@@ -5,7 +5,6 @@ const ProcessosSchema = new mongoose.Schema({
   /*
     Elementos e propriedades do usuario
   */
-  
   numeroProtocolo: {
     type: String,
     require: true,
@@ -37,13 +36,14 @@ const ProcessosSchema = new mongoose.Schema({
   },
   listaDocumentacao:{
     type: Array,
-    require: true,
+  },
+  listaLinkDocumentacao:{
+    type: Array,
   },
   createAt: {
     type: Date,
     default: Date.now,
   },
 });
-
 
 mongoose.model('Processo', ProcessosSchema);

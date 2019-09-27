@@ -22,7 +22,7 @@ module.exports = {
    },
 
    async update(req, res){ 
-     const processo = await ProcessofindByIdAndUpdate(req.params.id, req.body, {new: true});
+     const processo = await Processo.findByIdAndUpdate(req.params.id, req.body, {new: true});
      return res.json(processo);
    },
 

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const UsersSchema = new mongoose.Schema({
-
   /*
     Elementos e propriedades do usuario
   */
@@ -59,6 +58,5 @@ const UsersSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-
 
 mongoose.model('User', UsersSchema);
