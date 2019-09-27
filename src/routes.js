@@ -4,6 +4,7 @@ const routes  = express.Router();
 const UserController = require('./Controller/UserController');
 const EstadoController = require('./Controller/EstadoController');
 const SetorController = require('./Controller/SetorController');
+const ProcessoController = require('./Controller/ProcessoController');
 
 
 /*
@@ -28,6 +29,16 @@ routes.post  ('/setors', SetorController.store);
 routes.get   ('/setors/:id', SetorController.show);
 routes.put   ('/setors/:id', SetorController.update);
 routes.delete('/setors/:id', SetorController.destroy);
+
+/*
+Rotas para para os setores do previpalmas
+*/
+routes.get   ('/processos', ProcessoController.index);
+routes.post  ('/processos', SProcessoController.store);
+routes.get   ('/processos/:id', ProcessoController.show);
+routes.put   ('/processos/:id', ProcessoController.update);
+routes.delete('/processos/:id', ProcessoController.destroy);
+
 
 
 module.exports = routes;

@@ -1,24 +1,21 @@
 const mongoose = require('mongoose');
 
-const UsersSchema = new mongoose.Schema({
+const ProcessosSchema = new mongoose.Schema({
 
   /*
     Elementos e propriedades do usuario
   */
-  nome: {
+  
+  numeroProtocolo: {
     type: String,
     require: true,
   },
-  dataNascimento: {
+  nomeBeneficiario: {
     type: String,
     require: true,
   },
   telefone: {
     type: String,
-    require: true,
-  },
-  endereco: {
-    type: Array,
     require: true,
   },
   email: {
@@ -33,26 +30,17 @@ const UsersSchema = new mongoose.Schema({
     required: true,
     lowercase: true,
   },
-  password: {
-    type: String,
-    required: true,
-    select: false,
-  },
-  passwordResetToken: {
-    type: String,
-    select: false,
-  },
-  passwordResetExpires: {
-    type: Date,
-    select: false,
-  },
-  id_setor:{
+  despacho:{
     type:String,
-    require: true,
-  },
-  ativo:{
-    type:Boolean,
     require:true,
+  },
+  setorAtual:{
+    type:String,
+    require:true,
+  },
+  listaDocumentacao:{
+    type: Array,
+    require: true,
   },
   createAt: {
     type: Date,
@@ -61,4 +49,4 @@ const UsersSchema = new mongoose.Schema({
 });
 
 
-mongoose.model('User', UsersSchema);
+mongoose.model('Processo', ProcessosSchema);
