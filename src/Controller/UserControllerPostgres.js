@@ -10,12 +10,10 @@ const pool = new Pool({
 })
 
 
-const User;
-
 
 module.exports = {
   async getUsers  (request, response) {
-    pool.query('SELECT * FROM usuarios ORDER BY id ASC', (error, results) => {
+    pool.query('SELECT * FROM usuarios ORDER BY id_usuario ASC', (error, results) => {
       if (error) {
         throw error
       }

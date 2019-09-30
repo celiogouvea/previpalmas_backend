@@ -16,26 +16,6 @@ mongoose.connect('mongodb://localhost:27017/previpalmas',{
 requireDir('./src/models');
 
 
-var conString = "postgres://postgres:siprev123@192.168.42.10/siprev_gestao";
-pg.connect(conString, function(err, client, done) {
-
-   if (err) {
-     return console.error('error fetching client from pool', err);
-   }
-   client.query('SELECT $1::int AS number', ['1'], function(err, result) {
-     done();
-     if (err) {
-       return console.error('error running query', err);
-     }
-     console.log(result.rows[0].number);
-   });
- 
- });
- 
-
-
-
-
 
 //adicionando a rota da rais da api
 app.use('/api', require('./src/routes'));
