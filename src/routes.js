@@ -41,4 +41,18 @@ routes.delete('/processos/:id', ProcessoController.destroy);
 
 
 
+
+
+
+
+
+
+
+routes.get   ('/p_users', UserController.index);
+routes.post  ('/p_users', UserController.store);
+routes.get   ('/p_users/:id', UserController.show);
+routes.put   ('/p_users/:id', UserController.update);
+routes.delete('/p_users/:id', UserController.destroy);
+
+
 module.exports = routes;
