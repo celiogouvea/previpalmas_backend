@@ -5,6 +5,7 @@ const UserController = require('./Controller/UserController');
 const EstadoController = require('./Controller/EstadoController');
 const SetorController = require('./Controller/SetorController');
 const ProcessoController = require('./Controller/ProcessoController');
+const UserControllerPostgres = require('./Controller/UserControllerPostgres');
 
 
 /*
@@ -48,9 +49,9 @@ routes.delete('/processos/:id', ProcessoController.destroy);
 
 
 
-routes.get   ('/p_users', UserController.index);
+routes.get   ('/p_users', UserControllerPostgres.getUsers);
 routes.post  ('/p_users', UserController.store);
-routes.get   ('/p_users/:id', UserController.show);
+routes.get   ('/p_users/:id', UserControllerPostgres.getUserById);
 routes.put   ('/p_users/:id', UserController.update);
 routes.delete('/p_users/:id', UserController.destroy);
 

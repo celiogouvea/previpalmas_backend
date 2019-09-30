@@ -3,7 +3,7 @@ const pg = require('pg');
 const Pool = require('pg').Pool
 const pool = new Pool({
   user: 'postgres',
-  host: '192.168.42.46',
+  host: '192.168.42.10',
   database: 'siprev_gestao',
   password: 'siprev123',
   port: 5433,
@@ -12,6 +12,9 @@ const pool = new Pool({
 
 
 module.exports = {
+
+  //---------------------------------------------------------------------------------------
+  //Metodos funcionais
   async getUsers  (request, response) {
     pool.query('SELECT * FROM usuarios ORDER BY id_usuario ASC', (error, results) => {
       if (error) {
@@ -24,13 +27,34 @@ module.exports = {
    async getUserById(request, response) {
     const id = parseInt(request.params.id)
   
-    pool.query('SELECT * FROM usuarios WHERE id = $1', [id], (error, results) => {
+    pool.query('SELECT * FROM usuarios WHERE id_usuario = $1', [id], (error, results) => {
       if (error) {
         throw error
       }
       response.status(200).json(results.rows)
     })
   },
+
+  /*
+  Implementar busca de daods servidore no banco postgresql
+  */
+
+  async getBeneficiarioById(request, response) {
+    const id = parseInt(request.params.id)
+  
+    pool.query('SELECT * FROM servidores WHERE id_pessoa_fisica = $1', [id], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)
+    })
+  },
+  //------------------------------------------------------------------------------------------
+
+
+
+
+
 
    async createUser(request, response){
     const { name, email } = request.body
@@ -43,7 +67,7 @@ module.exports = {
     })
   },
 
-   async updateUser = (request, response) => {
+   async updateUser(request, response){
     const id = parseInt(request.params.id)
     const { name, email } = request.body
   
@@ -59,7 +83,7 @@ module.exports = {
     )
   },
 
-   async deleteUser = (request, response) => {
+   async deleteUser(request, response){
     const id = parseInt(request.params.id)
   
     pool.query('DELETE FROM users WHERE id = $1', [id], (error, results) => {
