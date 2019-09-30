@@ -52,6 +52,7 @@ routes.delete('/processos/:id', ProcessoController.destroy);
 routes.get   ('/p_users', UserControllerPostgres.getUsers);
 routes.post  ('/p_users', UserController.store);
 routes.get   ('/p_users/:id', UserControllerPostgres.getUserById);
+routes.get   ('/p_users_servidor/:id', UserControllerPostgres.getBeneficiarioById);
 routes.put   ('/p_users/:id', UserController.update);
 routes.delete('/p_users/:id', UserController.destroy);
 

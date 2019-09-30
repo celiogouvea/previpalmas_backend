@@ -42,7 +42,7 @@ module.exports = {
   async getBeneficiarioById(request, response) {
     const id = parseInt(request.params.id)
   
-    pool.query('SELECT * FROM servidores WHERE id_pessoa_fisica = $1', [id], (error, results) => {
+    pool.query('SELECT * FROM pessoas_fisicas WHERE id_pessoa_fisica = $1', [id], (error, results) => {
       if (error) {
         throw error
       }
