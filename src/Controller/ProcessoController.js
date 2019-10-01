@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const criarPasta = require('../Controller/PastaController');
 
 
 const Processo = mongoose.model('Processo');
@@ -18,6 +19,8 @@ module.exports = {
    async store(req, res){
      //criação
      const processo= await Processo.create(req.body);
+     //test criar pasta de processo
+     await criarPasta.Diretorio(req.params.numeroProtocolo);
      return res.json(processo);
    },
 
